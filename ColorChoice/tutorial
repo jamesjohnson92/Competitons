@@ -1,0 +1,3 @@
+Since (n choose x) == (n choose (n-x)), and it seems like you want to find the minimal x, we can search for x between 0 and n/2. Also, for arbitrary n and m, it's possible no such x exists, but probably what you want is the minimal such x, if one exists, such that (n choose x) >= m, i.e. the smallest x guaranteeing you can make m unique colour combinations -- with that x you may even be able to make more than m unique colour combinations.
+
+There's a simple O(n) solution, using the fact that (n choose (x+1)) / (n choose x) == (n-x)/(x+1), which you can see by expanding the "choose" expressions in terms of factorials, and cancelling things out.

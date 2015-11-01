@@ -1,0 +1,26 @@
+public class Main {
+  public static String toexuto(String text) {
+    //TODO: Transliterate English into Enigeliisohe, and return the result.
+    
+    StringBuilder sb = new StringBuilder("");
+    char c;
+    
+    for (int x = 0; x < text.length(); x++) {
+      sb.append(text.charAt(x));
+      
+      c = text.toLowerCase().charAt(x);
+      if ((!Character.isAlphabetic(c))
+          || c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        continue;
+      }
+      
+      if (c < 'e') sb.append('a');
+      else if (c < 'i') sb.append('e');
+      else if (c < 'o') sb.append('i');
+      else if (c < 'u') sb.append('o');
+      else sb.append('u');
+    }
+    
+    return sb.toString();
+  }
+}
